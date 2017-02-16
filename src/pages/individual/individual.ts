@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { User } from '../../model/user';
+import { BknUsers } from '../../providers/bkn-users';
 /*
   Generated class for the Individual page.
 
@@ -12,11 +13,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'individual.html'
 })
 export class IndividualPage {
+  users: User[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  /*constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IndividualPage');
+  }*/
+  constructor(public navCtrl: NavController, private bknusers: BknUsers) {
+    bknusers.load().subscribe(users => {
+      console.log(users)
+    })
   }
 
 }

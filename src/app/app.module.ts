@@ -7,6 +7,7 @@ import { RegisterPage } from '../pages/register/register';
 import { IndividualPage } from '../pages/individual/individual';
 import { FamilyPage } from '../pages/family/family';
 import { ProfilePage } from '../pages/profile/profile';
+import { BknUsers } from '../providers/bkn-users';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,6 @@ import { ProfilePage } from '../pages/profile/profile';
     FamilyPage,
     ProfilePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, BknUsers]
 })
 export class AppModule {}
